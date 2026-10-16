@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#111827">
+<title>Research Methodology — NPTEL Quiz</title>
+<style>
+:root{--bg:#f4f6fb;--card:#fff;--ink:#172033;--muted:#68738a;--line:#e2e7f0;--accent:#5b5ce2;--accent2:#ececff;--good:#147d52;--goodbg:#e8f7ef;--bad:#b42332;--badbg:#fff0f1;--shadow:0 12px 34px rgba(30,41,59,.08)}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.55}
+header{background:linear-gradient(120deg,#171b36,#34358d 65%,#5b5ce2);color:#fff;padding:30px 18px 26px}
+.hero{max-width:1100px;margin:auto}.eyebrow{font-size:.78rem;text-transform:uppercase;letter-spacing:.14em;opacity:.8;font-weight:750}.hero h1{font-size:clamp(1.6rem,4vw,2.45rem);line-height:1.15;margin:8px 0}.hero p{max-width:700px;color:#e3e5ff;margin:10px 0 0}
+main{max-width:1100px;margin:22px auto;padding:0 16px 42px;display:grid;grid-template-columns:255px minmax(0,1fr);gap:20px}
+.sidebar,.panel,.question-card{background:var(--card);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow)}
+.sidebar{padding:16px;height:max-content;position:sticky;top:14px}.side-title{font-size:.82rem;text-transform:uppercase;letter-spacing:.09em;color:var(--muted);font-weight:800;margin:0 0 10px}
+.week-tabs{display:grid;gap:7px}.week-tab{border:1px solid transparent;background:#f7f8fc;color:#39445b;border-radius:11px;padding:10px 11px;display:flex;align-items:center;justify-content:space-between;gap:8px;text-align:left;cursor:pointer;font:inherit;font-size:.91rem}.week-tab:hover{border-color:#c9caff}.week-tab.active{background:var(--accent2);color:#3839b9;border-color:#c7c8ff;font-weight:750}.count{font-size:.75rem;color:var(--muted);white-space:nowrap}
+.score-box{margin-top:16px;border-top:1px solid var(--line);padding-top:15px}.score-numbers{display:flex;justify-content:space-between;gap:10px}.score-numbers strong{font-size:1.25rem}.score-numbers span{display:block;font-size:.76rem;color:var(--muted)}.progress{height:8px;background:#e9ebf4;border-radius:99px;overflow:hidden;margin-top:10px}.progress-fill{height:100%;width:0;background:linear-gradient(90deg,#6366f1,#8b5cf6);transition:width .2s}
+.content{min-width:0}.panel{padding:20px;margin-bottom:16px}.week-heading{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;flex-wrap:wrap}.week-heading h2{margin:0;font-size:1.4rem}.week-heading p{margin:5px 0 0;color:var(--muted);font-size:.9rem}.pill{display:inline-flex;align-items:center;gap:6px;border-radius:999px;padding:5px 10px;background:#f0f1ff;color:#4244b8;font-size:.78rem;font-weight:750;white-space:nowrap}
+.toolbar{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:18px}.filter-label{font-size:.85rem;color:var(--muted)}select{padding:9px 11px;border:1px solid var(--line);border-radius:10px;background:white;color:var(--ink);font:inherit}
+.question-card{padding:19px;margin-bottom:13px;box-shadow:0 4px 14px rgba(30,41,59,.035)}.q-top{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:10px}.q-num{font-size:.79rem;font-weight:800;color:var(--accent);text-transform:uppercase;letter-spacing:.06em}.type-badge{font-size:.73rem;color:var(--muted);background:#f3f5f9;padding:4px 8px;border-radius:7px}.question-text{font-weight:700;font-size:1.04rem;margin:0 0 14px}
+.options{display:grid;gap:8px}.option{position:relative;display:flex;align-items:flex-start;gap:11px;padding:12px 13px;border:1px solid var(--line);border-radius:12px;background:#fff;cursor:pointer;transition:border .15s,background .15s}.option:hover{border-color:#a7a8f8;background:#fafaff}.option input{accent-color:var(--accent);margin-top:5px;flex:0 0 auto;width:16px;height:16px}.option.correct{border-color:#74c9a0;background:var(--goodbg)}.option.incorrect{border-color:#f0a0a7;background:var(--badbg)}.option:has(input:disabled){cursor:default}.option-copy{flex:1}.option-label{font-size:.94rem}.option-feedback{font-size:.82rem;margin-top:5px;display:none}.option.correct .option-feedback,.option.incorrect .option-feedback{display:block}.option.correct .option-feedback{color:var(--good)}.option.incorrect .option-feedback{color:var(--bad)}
+.q-footer{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-top:14px}.feedback{font-size:.88rem;min-height:22px;flex:1}.feedback.good{color:var(--good)}.feedback.bad{color:var(--bad)}.feedback.neutral{color:var(--muted)}button{font:inherit;cursor:pointer}.btn{border:0;border-radius:10px;padding:10px 14px;font-weight:750;font-size:.88rem}.btn-primary{background:var(--accent);color:#fff}.btn-primary:hover{background:#494ac9}.btn-secondary{background:#f0f1f8;color:#344054}.btn:disabled{opacity:.5;cursor:not-allowed}.bottom-actions{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-top:18px}.empty{padding:36px;text-align:center;color:var(--muted)}.hint{margin-top:11px;color:var(--muted);font-size:.83rem}.notice{font-size:.84rem;background:#f7f8ff;border:1px solid #e2e3ff;padding:12px 14px;border-radius:12px;color:#42456e;margin-top:12px}
+footer{max-width:1100px;margin:0 auto;padding:0 16px 28px;color:var(--muted);font-size:.82rem}
+@media(max-width:780px){main{grid-template-columns:1fr;margin-top:14px}.sidebar{position:static}.week-tabs{grid-template-columns:repeat(3,minmax(0,1fr))}.week-tab{padding:9px;display:block;font-size:.82rem}.count{display:block;margin-top:2px}.panel{padding:16px}.question-card{padding:15px}}
+@media(max-width:430px){.week-tabs{grid-template-columns:repeat(2,minmax(0,1fr))}.hero{padding:0 2px}.option{padding:10px}.q-footer{align-items:stretch}.q-footer .btn{width:100%}}
+</style>
+</head>
+<body>
+<header><div class="hero"><div class="eyebrow">NPTEL practice companion</div><h1>Research Methodology Quiz</h1><p>Weeks 1–12 · 120 questions · Instant option feedback · Track your progress as you practise.</p></div></header>
+<main>
+<aside class="sidebar">
+  <p class="side-title">Choose a week</p>
+  <nav class="week-tabs" id="weekTabs" aria-label="Select quiz week"></nav>
+  <div class="score-box">
+    <p class="side-title">Your progress</p>
+    <div class="score-numbers"><div><strong id="scoreText">0 / 0</strong><span>Correct answers</span></div><div><strong id="attemptText">0 / 120</strong><span>Attempted</span></div></div>
+    <div class="progress"><div class="progress-fill" id="progressFill"></div></div>
+    <div class="bottom-actions"><button class="btn btn-secondary" id="resetBtn">Reset all</button></div>
+  </div>
+</aside>
+<section class="content">
+  <div class="panel">
+    <div class="week-heading"><div><h2 id="weekTitle">Week 1: Assignment</h2><p id="weekDescription">Choose an option to see feedback immediately.</p></div><span class="pill" id="weekCount">10 questions</span></div>
+    <div class="toolbar"><span class="filter-label">Feedback appears as soon as you select an option.</span><label class="filter-label">View <select id="viewFilter"><option value="all">All questions</option><option value="unanswered">Unanswered only</option><option value="incorrect">Incorrect / incomplete</option></select></label></div>
+    <div class="notice">For questions marked “Select all that apply,” tick each option you believe is correct, then choose <b>Check answer</b>. Each click still gives feedback about that specific option; the question score is awarded only when the complete answer set is checked.</div>
+  </div>
+  <div id="questions"></div>
+  <div class="panel bottom-actions"><button class="btn btn-secondary" id="prevBtn">← Previous week</button><button class="btn btn-primary" id="nextBtn">Next week →</button></div>
+</section>
+</main>
+<footer>Self-contained HTML file. Your answers and score stay in this page session; nothing is uploaded to a server.</footer>
+<script>
+const weeks = [
+    {title:'Week 1: Assignment', questions:[
+      ['What sets a PhD apart from other degrees?',['Focus on practical skills and hands-on experience.','Development of critical thinking and analytical abilities.','Preparation to guide others in pursuing a PhD.','Completion of coursework and examinations.'],[1,2]],
+      ['What distinguishes a research-based degree from a typical undergraduate degree?',['Clear and defined boundaries throughout the degree program.','Opportunities for continuous discovery and learning.','Graduation day marking the completion of the degree.','Acquisition of expertise and recognition in a specific field.'],[1]],
+      ['What is the importance of attitude and communication in the student-advisor relationship?',['Having prior knowledge is the most important factor for a student to work towards a PhD.','Advisors expect students to define their own research problems without any guidance.','Students should choose advisors based on their reputation and availability.','Attitude, inclination to learn, and effective communication with the advisor are crucial.'],[3]],
+      ['What makes research challenging for first-time researchers?',['The need to handle routine work and drudgery.','The sudden shift in patterns from coursework to research.','The discovery process involved in understanding the research process.','The pressure to obtain a degree and complete the research process.'],[1]],
+      ['What is one advantage of research when dealing with failure?',['Research allows for changing initial assumptions and exploring different approaches.','Research ensures that failures are minimized and success is guaranteed.','Research provides a predefined path to follow, for sure eliminating the possibility of failure.','Research discourages any changes in assumptions or approaches to maintain consistency.'],[0]],
+      ['When conducting experiments and analysing results in research:',['Each individual step will always lead to something significant.','The familiarity with the area helps in building experiments, but the results are often insignificant.','Day-to-day experiments and results are usually significant and groundbreaking.','Small steps are taken, and over time they contribute to something significant.'],[3]],
+      ['Technologies in use today have life span of decades.',['True','False'],[1]],
+      ['Engineers aim to reduce the number of parts in a product.',['True','False'],[0]],
+      ['Global warming is only a theoretical phenomenon.',['True','False'],[1]],
+      ['Carbon dioxide in the atmosphere contributes to global warming.',['True','False'],[0]]
+    ]},
+    {title:'Week 2: Assignment', questions:[
+      ['Experimental data generated from a setup must validate the theoretical predictions or models designed for that setup.',['True','False','Sometimes','Never'],[2]],
+      ['Literature survey is important because (select all that apply).',['It helps in getting a summary of work that has been done till date in some particular research area','It is helpful in ensuring that a research work is not getting repeated','It is helpful in understanding the approaches taken by scientists and what are the gaps in the processes','It is helpful in clarifying the controversial results that one can get'],[0,1,2,3]],
+      ['Which method of searching literature is suitable to identify the earliest contributor of a scientific outcome?',['Keyword based search followed by sorting by year of publication','Citation based search followed by sorting by year of publication','Keyword based search followed by sorting by citations','Back reference based search following a keyword based search'],[3]],
+      ['Which bibliographic detail is a sufficient and unique piece of information to locate an article in an archival journal?',['ISSN','DOI','Page Number','Volume Number'],[1]],
+      ['Which of the following is always true for an open access journal?',['Such journals are not peer reviewed','Articles in such a journal are freely available for download','Such journals charge for publication of an article','Such journals are of dubious reputation'],[1]],
+      ['Which is NOT a recommended practice to identify publications that need to be listed under references of an article?',['Relevant publications actually referred to','Latest publications by the editor of the journal','Original publications in the topic of the article','Own publications referred in the article for further details'],[1]],
+      ['Which index is considered as a measure of the impact of an author in their area of specialization?',['Total number of articles published','Hirsch index of the author','Number of views of their latest article','Number of downloads of all articles in a year'],[1]],
+      ['Which are categorized as primary sources for literature survey? (Select all that apply).',['Periodicals & research reports','Conference proceedings & official publications','Compilations & reviews','Directories & year books'],[0,1]],
+      ['The abstracting databases for systematic manual searches include (select all that apply).',['INSPEC and COMPENDEX','PubMed','Wikipedia','Chemical Abstract (CA) service'],[0,1,3]],
+      ['Which collected resources can be considered archival references for inclusion in a publication?',['Only 1, 2 and 3','Only 3, 5 and 6','Only 3, 4 and 6','Only 1, 2 and 5'],[1]]
+    ]},
+    {title:'Week 3: Assignment', questions:[
+      ['Common laboratory/industrial sources that can cause damage and require caution (select all that apply).',['Sources of heat','Chemicals (acids, bases, etc.)','Pressurized gas cylinders','Electricity and water source'],[0,1,2,3]],
+      ['Which statistic is used to quantify errors in parameter estimates?',['Mode','Skewness','Standard deviation','Median'],[2]],
+      ['A cooling-tower temperature sensor malfunctioned and recorded higher temperatures. What conclusion can be drawn?',['Different values increase analysis possibilities and are therefore useful','The data cannot be reliable because they are malfunctioned and not true system data','Predictive analysis can assume the error and subtract it from the final value','None of these'],[1]],
+      ['Which can be treated as a deterministic signal?',['Measurements of atmospheric temperature','A sine wave corrupted by a rectangular pulse','Estimates of signals from measurements','None of the above'],[1]],
+      ['Identify the incorrect statements about non-linear models (select all that apply).',['Linearization involves mere discarding of the non-linear terms in a model.','The standard Taylor-series-based linearized model changes with the nominal point of linearization.','A non-linear model can never yield a zero-valued output to a non-zero input.','Estimates of linear models have smaller errors than those of non-linear models.'],[0,2,3]],
+      ['Which transform is used to detect periodic (oscillatory) components in a signal?',['Hilbert transform','z-transform','Fourier transform','All of the above'],[2]],
+      ['The ratio of errors in parameter estimates from two data sets with SNR 9 and 100 is:',['3 : 10','5 : 1','10 : 3','10 : 0.9'],[2]],
+      ['Which statement about a parameter estimate is true?',['It is in general close to the true value with high probability.','When averaged across a million experimental records under the same conditions, it equals the true value.','Least squares always gives the estimate with lowest error.','It is a mathematical function of the observations.'],[3]],
+      ['Which statements are true? (Select all that apply).',['Deterministic phenomena produce outcomes that can be predicted accurately.','Random processes occur randomly.','A process can produce a mix of deterministic and stochastic effects.','Signals that are random can never take negative values.'],[0,2]],
+      ['An estimator is most efficient when:',['Parameters can be estimated in the least possible time.','It provides accurate estimates with the smallest number of observations.','Standard error in its parameter estimates is lowest compared with other estimators.','It estimates parameters accurately even in the presence of outliers.'],[2]]
+    ]},
+    {title:'Week 4: Assignment', questions:[
+      ['The title of a paper is “Battery design and its impact”. This title (select all that apply):',['Identifies the area of research clearly','Indicates what is unique about the research','Does not identify the area of the research clearly','Does not indicate what is unique about the research'],[2,3]],
+      ['In images:',['High magnification implies high resolution','High magnification does not necessarily imply high resolution','Low magnification implies high resolution','High resolution implies low magnification'],[1]],
+      ['Tables are preferred over graphs:',['Always','Never','Only when exact values need to be indicated','Only when trends in data need to be indicated'],[2]],
+      ['The length of a document (select all that apply):',['Indicates how much you know','Indicates how little you know','Does not indicate anything about your knowledge','Does not indicate anything about the reader’s knowledge'],[2,3]],
+      ['The title of a paper should indicate the area of work as well as what is unique about the work.',['True','False'],[0]],
+      ['In scientific documents, sentences should be relatively short and to the point.',['True','False'],[0]],
+      ['An image of a car engine in an article must (select all that apply):',['Show the level of detail required for the discussion in the article','Have a marker bar indicating scale','Be in colour and not in black and white','Be in black and white and not in colour'],[0,1]],
+      ['Strategies one can use in the middle of a document include (select all that apply):',['Chronological strategy','Spatial strategy','Following a variable','Suspense strategy'],[0,1,2]],
+      ['While working with electricity, only the voltage poses a danger to users.',['True','False'],[1]],
+      ['“Pouring rain results in clogged drains, and slippery roads. These clogged drains spill further water on to the roads.” The use of “these” in the previous sentence is ambiguous.',['True','False'],[1]]
+    ]},
+    {title:'Week 5: Assignment', questions:[
+      ['According to Sternberg’s theories of intelligence, practical intelligence relates to (select all that apply):',['How one relates to the environment around them','How street smart they are','How well they come up with new theories','How well they solve new problems'],[0,1]],
+      ['Collaborators generated and analysed data, but some published independently because they typed it up first. Is this ethical?',['Yes, because they collaborated and know each other','No, all authors should know and agree with the publication','Yes, if collaborators are junior to you','No, only if the authors are senior to you'],[1]],
+      ['Creativity is seen in:',['Drama','Science fiction','Engineering','All of the above'],[3]],
+      ['A good researcher is often well read in many areas.',['True','False'],[0]],
+      ['We can work to the best of our potential when we are:',['Hypo stressed','Eustressed','Hyper stressed','Distressed'],[1]],
+      ['A measure of a successful researcher is that their work should (select all that apply):',['Be recognized by peers at an international level','Typically be published in peer-reviewed journals','Be mentioned in the campus magazine','Be discussed in a departmental meeting'],[0,1]],
+      ['Creative people are (select all that apply):',['More likely to follow societal restrictions','Less likely to follow societal restrictions','More likely to think within limits of previous work','More likely to come up with a surprisingly new solution'],[1,3]],
+      ['A PhD usually makes you:',['A specialist in one narrow area','A person who conducts experiments fast','A person with wide knowledge across many topics','A person who makes excellent sketches'],[0]],
+      ['To become a good researcher, one must usually (select all that apply):',['Have good communication skills','Have mastery over specific techniques','Have a line of investigation','Be aware of recent advances in the field'],[0,1,2,3]],
+      ['Attributes of a fully professional researcher include (select all that apply):',['Having fundamental concepts that international peers may be interested in','Having command over their area','Being aware of where they can make a significant contribution','Working without focusing on literature in the area'],[0,1,2]]
+    ]},
+    {title:'Week 6: Assignment', questions:[
+      ['Which of the following falls in the category of intellectual property? (Select all that apply).',['An original set of ideas or research results','Ideas originating from real property','Properties emanating from human creative labor','All of the above'],[0,2]],
+      ['Violations of Intellectual Property Rights lead to (select all that apply):',['Infringement','Casual penalties','No big deal as fundamental rights allow anything','None of the above'],[0,1]],
+      ['To obtain legal protection, which type of intellectual property right does not require registration?',['Copyrights','Patents','Designs','Geographical Indications'],[0]],
+      ['A person invents a new process to capture musical performance on tape. They will most likely apply for:',['Copyrights','Trade Marks','Patents','Trade Secret'],[2]],
+      ['Use of an unregistered trademark of a competitor amounts to the tort of:',['Deceit','Fraud','Negligence','Passing off'],[3]],
+      ['What does an IP right entitle a person to?',['Right to file a suit in case of infringement','Right of excludability','Right of commercial exploitation','All of the above'],[3]],
+      ['The Reebok Delta symbol and Hyundai Logo are protected by:',['Patents','Trade Marks','Trade dress','Geographical Indications'],[1]],
+      ['Under the Patents Act, 1970, the person entitled to receive a patent on a new invention is:',['The one who invented it first','The one who commercialises it first','The one who thought of it first','The one who filed a patent application first'],[3]],
+      ['What is the term of a patent in India?',['20 years','25 years','10 years','15 years'],[0]],
+      ['What is the full form of TRIPS?',['Tariff Related Aspects of Intellectual Properties','Trade Related Aspects of Intellectual Property Science','The Registration of Intellectual Property','Trade Related Aspects of Intellectual Property Rights'],[3]]
+    ]},
+    {title:'Week 7: Assignment', questions:[
+      ['In a true experimental research design:',['No control on external variables','Less control on external variables','Control on external variables by randomization','No use of randomization'],[2]],
+      ['Which is an incomplete experimental research design?',['Before and after with control group design','Factorial design','One group before-after design','Latin Square design'],[2]],
+      ['Coefficient of Determination is unity when (select all that apply):',['Error Sum of Squares is zero','Total Sum of Squares is zero','Regression Sum of Squares is zero','Regression Sum of Squares is the same as Total Sum of Squares'],[0,3]],
+      ['The probability density function describes:',['Probability of a phenomenon occurring on a macro scale','Probability of a phenomenon occurring on a micro scale','Distribution of probabilities in the continuous random-variable domain','Distribution of probabilities in an undefined variable set'],[2]],
+      ['In Response Surface Methodology canonical analysis with two factors, maximum response is achieved when eigenvalues of the B matrix are:',['All positive','All negative','All zero','One positive and the other negative'],[1]],
+      ['Experiments are conducted in laboratories to:',['Verify scientific predictions','Obtain trends when theory is not known','Find effects of different variables on the desired response','All of the above'],[3]],
+      ['SPC and Design of Experiments are very closely interrelated.',['True','False'],[0]],
+      ['Which is NOT an application of experimental design in engineering design?',['Evaluation and comparison of basic design configurations','Evaluation of material alternatives','Evaluation of key product design parameters that impact performance','Evaluation of the correct process to develop the product'],[3]],
+      ['The average estimated from a data collection is 50 cm. Which quantities have the same units as the data?',['Standard deviation','Median','Mode','All of the above'],[3]],
+      ['The mean of the binary data set {1, -1, -1, 1, 1, -1} is:',['-1','0','1','3'],[1]]
+    ]},
+    {title:'Week 8: Assignment', questions:[
+      ['To pursue research, which is required first?',['Developing a research design','Formulating a research question','Deciding the data-analysis procedure','Formulating a research hypothesis'],[1]],
+      ['Which statement is false in the context of participatory research?',['It recognizes knowledge as power','It is a collective process of inquiry','It emphasizes people as experts','Its sole purpose is the production of knowledge'],[3]],
+      ['How should the depth of research be judged?',['By research title','By research duration','By research objectives','By total expenditure'],[2]],
+      ['What is the main aim of interdisciplinary research?',['To oversimplify the research problem','Integrating knowledge from multiple disciplines to solve a problem','To create a new trend in research methodology','To reduce emphasis on a single subject'],[1]],
+      ['Electron microscopes can be used in reverse to write in extremely small areas.',['True','False'],[0]],
+      ['What are the core elements of a dissertation?',['Introduction; Data Collection; Data Analysis; Conclusions and Recommendations','Executive Summary; Literature Review; Data Gathered; Conclusions; Bibliography','Research Plan; Research Data; Analysis; References','Introduction; Literature Review; Research Methodology; Results; Discussions and Conclusions'],[3]],
+      ['How can we enhance the research objective?',['By making it more valid','By making it more reliable','By making it more impartial','All of the above'],[3]],
+      ['A common test in research demands priority on:',['Reliability','Useability','Objectivity','All of the above'],[3]],
+      ['An appropriate source to find descriptive information is:',['Bibliography','Directory','Encyclopedia','Dictionary'],[2]],
+      ['Mahabalipuram in south-east India is pre-eminently testimony to the ______ civilization.',['Pallavas','Mauryas','Guptas','Cholas'],[0]]
+    ]},
+    {title:'Week 9: Assignment', questions:[
+      ['Which characteristics distinguish a research programme from a regular curriculum-oriented academic programme? (Select all that apply).',['The research question may need extensive exploration before becoming well defined.','Experimental outcomes may deviate from expectations and require changes to the research approach.','The programme follows a highly predictable schedule with predefined outcomes at every stage.','The researcher may formulate new questions as insights emerge from previous work.'],[0,1,3]],
+      ['The lecture compares the research journey to a roller-coaster ride primarily because:',['Researchers must continuously work under high pressure','Research has predictable stages followed by unavoidable examinations','Research involves progress, uncertainty, setbacks, breakthroughs and renewed progress','Research primarily depends on collaboration with many researchers'],[2]],
+      ['Which factors can contribute to a scholar’s overall research experience in a laboratory? (Select all that apply).',['Relationships with advisers and labmates','Emotional experiences and friendships','Availability and accessibility of research facilities','Support from friends and family'],[0,1,2,3]],
+      ['Which practices help maintain a sustainable rhythm in research life? (Select all that apply).',['Adequate sleep and physical activity','Taking time for recreation and renewal','Reflecting periodically on activities and decisions','Working continuously for extremely long hours whenever a problem arises'],[0,1,2]],
+      ['A researcher feels angry and inadequate after harsh adviser feedback. What is the most appropriate immediate response?',['Respond immediately to defend the research','Suppress the emotion and continue without reflection','Pause, recognize the emotion, regulate it through rhythmic breathing, then respond clearly','Discuss the adviser’s behaviour with all labmates immediately'],[2]],
+      ['Strategies discussed for processing or reducing intense anger include (select all that apply).',['Practicing rhythmic breathing','Temporarily stepping away from the situation','Journaling what one is feeling','Immediately confronting the person responsible'],[0,1,2]],
+      ['A scholar feels discouraged when a labmate’s paper is accepted first. What response best reflects the lecture?',['Conclude the labmate is more capable','Suppress the comparison without examining it','Turn comparison into curiosity and identify possible improvements','Avoid the labmate until one’s own paper is accepted'],[2]],
+      ['Prolonged emotional distress or isolation can negatively affect (select all that apply).',['Research progress','Only the publication record','Physical health','Friendships and social relationships'],[0,2,3]],
+      ['A researcher works very long hours and withdraws from others when stuck. What is the primary concern?',['It shows insufficient commitment to independent research','Emotional isolation may worsen the situation and harm research and well-being','Long hours always produce incorrect results','Researchers should never solve difficult problems independently'],[1]],
+      ['Potential support systems for a research scholar include (select all that apply).',['Adviser or supervisor','Labmates and friends','Mentor','Family or old friends'],[0,1,2,3]]
+    ]},
+    {title:'Week 10: Assignment', questions:[
+      ['Students in schools typically expect (select all that apply).',['Well-defined questions','Question-paper patterns finalized in advance','Clarity on the exam portions','Questions outside the syllabus'],[0,1,2]],
+      ['From a school student’s perspective, “How long will it take to go from Chennai to Kolkata?” is:',['A poorly defined question','A well-defined question','Typically how a full exam question is framed','A question with a unique answer'],[0]],
+      ['The format of exams in schools (select all that apply):',['Helps you understand fundamentals','Teaches you to break a problem into parts and solve them','Prepares you for a professional setting','Teaches you to handle unexpected questions'],[0,1,2]],
+      ['A typical professional workplace requires you to (select all that apply):',['Handle open-ended questions','Solve poorly defined problems','Focus on syllabus','Work within a question-paper pattern'],[0,1]],
+      ['Learning in college is expected to (select all that apply):',['Prepare you for professional life','Focus only on well-defined problems','Teach you to handle open-ended problems','Follow the same approach used in school'],[0,2]],
+      ['Applying a known theory to one additional new situation is most likely:',['Breakthrough research','Incremental research','Transformational research','An important contribution to research'],[1]],
+      ['Using a series of experimental techniques to study the same phenomenon across different samples is typically an example of:',['Systematic research','Transformational research','Incremental research','Breakthrough research'],[0]],
+      ['In phone development, which can be considered transformational?',['First deployment of the landline','First deployment of the cordless phone','Improvement from cordless phone to mobile phone','Making first-generation mobile phones smaller and more colourful'],[2]],
+      ['In bicycle development, which can be considered transformational?',['Improvement from wooden to cushioned seat','Making the seat more ergonomic','Adding a carrier','Adding gears to a bicycle'],[3]],
+      ['In airplane development, imagination can be associated with:',['Designing fixed wings even though birds have flapping wings','Adding seats inside an airplane','Creating a cargo version of an airplane','Adding more engines to an airplane'],[0]]
+    ]},
+    {title:'Week 11: Assignment', questions:[
+      ['Arthur Samuel’s checkers program illustrates which correct statements? (Select all that apply).',['The machine was explicitly programmed with every possible strategy','The machine learned through experience by repeatedly playing the game','The example is associated with an early instance of reinforcement learning','The example shows AI learning began only with generative AI'],[1,2]],
+      ['Which statements reflect the lecture’s discussion of classical AI and generative AI? (Select all that apply).',['Generative AI is the only appropriate approach for modern research','Classical AI methods can still solve domain-specific problems effectively','Choose an AI approach according to the problem rather than assuming generative AI is always needed','Classical AI became irrelevant after LLMs emerged'],[1,2]],
+      ['An LLM predicts the next token from context. Which statements are correct? (Select all that apply).',['A token’s probability can depend on preceding context','A token with the highest probability must always be generated','Different contexts can produce different next-token probability distributions','The model can repeatedly predict tokens to construct a longer response'],[0,2,3]],
+      ['Which statements distinguish token size, context size and parameter count? (Select all that apply).',['Token size is related to the vocabulary of words or subwords the model can generate','Context size refers to the amount of previous token information considered','Parameter count is the number of tokens that can be stored in the prompt','Parameter count relates to how learned probability distributions are represented'],[0,1,3]],
+      ['Which statements describe vector representations in an LLM? (Select all that apply).',['A large probability matrix can be represented through a smaller-dimensional vector space','Different contexts may be projected to nearby locations in vector space','Compression can contribute to variability and errors as contexts influence generation','Every context is retained as a completely independent point with no overlap'],[0,1,2]],
+      ['Which statements are consistent with the lecture’s explanation of alignment? (Select all that apply).',['Alignment can modify model behaviour so probabilities better match desired outcomes','Alignment may target factuality, bias reduction or local context','Alignment guarantees every LLM output is factually correct','Reinforcement learning from human preferences is associated with alignment'],[0,1,3]],
+      ['Relevant information is retrieved from an internal repository and added to an ambiguous question before a small model answers. Which statements apply? (Select all that apply).',['This is consistent with Retrieval-Augmented Generation (RAG)','Retrieved information provides additional context','It necessarily requires retraining the entire model','Additional context can make the response more focused'],[0,1,3]],
+      ['The lecture uses the 2011 ICC World Cup to explain RAG. Which ideas capture the point? (Select all that apply).',['Retrieved information can contextualize an otherwise ambiguous query','The original question can shift toward a more appropriate contextual representation','RAG primarily increases the number of LLM parameters','A richer context can increase the probability of producing the intended response'],[0,1,3]],
+      ['Which statements about hallucination are correct? (Select all that apply).',['A model may produce a plausible answer that does not match ground truth','Hallucination can occur when information or context is insufficiently represented','More context may reduce hallucination but cannot necessarily eliminate it','Hallucination means the model deliberately decided to provide false information'],[0,1,2]],
+      ['A model gives a misleading recommendation because a false article was in its learned information sources. Which statements are appropriate? (Select all that apply).',['The problem is necessarily hallucination','AI systems can propagate misinformation present in their sources','A response can mislead without being simply an invented fact','Independent verification of important AI-generated information remains necessary'],[1,2,3]]
+    ]},
+    {title:'Week 12: Assignment', questions:[
+      ['Which statements distinguish course-based from research-based education? (Select all that apply).',['Course-based education covers existing knowledge, whereas PhD research is expected to create new knowledge','A PhD follows the same common prescribed syllabus as a course-based degree','Course-based education generally has a prescribed syllabus, whereas research does not simply follow a fixed syllabus','Existing knowledge and new knowledge from PhD research are evaluated in exactly the same way'],[0,2]],
+      ['A new PhD scholar expects a complete step-by-step procedure from the guide. Which responses fit the lecture? (Select all that apply).',['PhD research involves substantially self-directed work','No fixed syllabus means guidance from the guide is unnecessary','The guide can provide support when ambiguity or difficulty arises','The scholar is expected to decide how the research should progress'],[0,2,3]],
+      ['Which conditions matter for treating a proposed hypothesis as scientific? (Select all that apply).',['It is an educated prediction rather than a statement already established as true','It allows the possibility of being disproved','It should be protected from contradictory observations using untestable explanations','Its truth must be established before experiments or data collection'],[0,1]],
+      ['For the hypothesis “All swans are white,” which statements are correct? (Select all that apply).',['Finding a black swan could disprove the hypothesis','Every swan in the world must be observed before scientific examination','The possibility of disproof is central to the criterion discussed','The criterion emphasizes possible disproof rather than permanent proof'],[0,2,3]],
+      ['A student starts a PhD with a broad research topic. Which actions are appropriate before a testable hypothesis? (Select all that apply).',['Form relevant questions about the topic and why it matters','Start unrestricted literature survey and use it as the only route to the problem','Use literature exploration and observations to refine questions through repeated cycles','Formulate the final hypothesis immediately without further exploration'],[0,2]],
+      ['In the obesity and eating-habit example, which statements are supported? (Select all that apply).',['An anomaly can occur when observations do not match a commonly assumed explanation','The influence of factors such as amount of food offered can motivate investigation','The hypothesis was formed directly from the broad topic without literature or observations','A missing link or contradiction can motivate research and help generate a hypothesis'],[0,1,3]],
+      ['Which statements about Revised Bloom’s Taxonomy are correct? (Select all that apply).',['Remember, Understand and Apply are lower-order thinking levels','Analyze, Evaluate and Create are higher-order thinking levels','Create is below Remember because new ideas require less cognitive effort','Everyone experiences exactly the same difficulty at all six levels'],[0,1]],
+      ['A PhD scholar collects data, examines unfamiliar patterns, considers alternate hypotheses and develops a new idea. Which Bloom’s levels are represented? (Select all that apply).',['Analyze','Evaluate','Remember','Create'],[0,1,3]],
+      ['Which statements reflect the role of higher-order thinking in PhD research? (Select all that apply).',['All six thinking levels may be used in research problem-solving','Analysis is an important starting level because researchers collect and analyze data','The main intellectual focus of a PhD is memorizing existing knowledge','Evaluation can involve considering alternate hypotheses and attempting to validate them'],[0,1,3]],
+      ['Which statements about creativity and functional fixedness are consistent with the lecture? (Select all that apply).',['Creative thinking can be developed through practice rather than being fixed at birth','Functional fixedness can make someone see an object only through its conventional purpose and hinder lateral thinking','Complete knowledge of existing knowledge guarantees creation of something new','Functional fixedness helps researchers generate new approaches to unexpected challenges'],[0,1]]
+    ]}
+  ];
+const state = {};
+let currentWeek = 0;
+weeks.forEach((w, wi) => w.questions.forEach((q, qi) => {
+  const id = `${wi}-${qi}`;
+  state[id] = { selected: [], checked: false, correct: false, seen: new Set() };
+  q.id = id;
+  q.weekIndex = wi;
+  q.questionIndex = qi;
+  q.multi = q[2].length > 1;
+}));
+const $ = id => document.getElementById(id);
+function optionFeedback(q, oi) {
+  const answerIndexes = q[2];
+  if (answerIndexes.includes(oi)) return `This is an accepted answer${q.multi ? ' and belongs in the complete selection' : ''}.`;
+  return `This option is not part of the accepted answer${q.multi ? ' set' : ''}.`;
+}
+function correctAnswerText(q) { return q[2].map(i => q[1][i]).join(' · '); }
+function renderTabs() {
+  $('weekTabs').innerHTML = weeks.map((w,i) => `<button class="week-tab ${i===currentWeek?'active':''}" data-week="${i}" aria-current="${i===currentWeek?'page':'false'}"><span>${w.title.replace(': Assignment','')}</span><span class="count">${w.questions.filter((q,qi)=>state[`${i}-${qi}`].checked).length}/10 done</span></button>`).join('');
+  $('weekTabs').querySelectorAll('[data-week]').forEach(b=>b.addEventListener('click',()=>{currentWeek=Number(b.dataset.week);render();}));
+}
+function render() {
+  renderTabs();
+  const week = weeks[currentWeek];
+  $('weekTitle').textContent = week.title;
+  $('weekDescription').textContent = `Week ${currentWeek+1} of 12 · Select answers and review the feedback.`;
+  $('weekCount').textContent = `${week.questions.length} questions`;
+  $('prevBtn').disabled = currentWeek===0;
+  $('nextBtn').disabled = currentWeek===weeks.length-1;
+  const filter = $('viewFilter').value;
+  const visible = week.questions.map((q,qi)=>({q,qi,s:state[`${currentWeek}-${qi}`]})).filter(({s})=>filter==='all'||(filter==='unanswered'&&!s.checked)||(filter==='incorrect'&&s.checked&&!s.correct));
+  $('questions').innerHTML = visible.length ? visible.map(({q,qi,s})=>renderQuestion(q,qi,s)).join('') : `<div class="panel empty">No questions match this filter for this week.</div>`;
+  bindQuestionEvents();
+  updateScore();
+}
+function renderQuestion(q, qi, s) {
+  const typeLabel = q.multi ? 'Select all that apply' : 'Choose one answer';
+  const opts = q[1].map((opt,oi)=>{
+    const selected = s.selected.includes(oi);
+    const known = s.seen.has(oi);
+    let cls = '';
+    if(known) cls = q[2].includes(oi) ? 'correct' : 'incorrect';
+    return `<label class="option ${cls}"><input type="${q.multi?'checkbox':'radio'}" name="q-${q.id}" value="${oi}" ${selected?'checked':''} ${s.checked?'disabled':''}><span class="option-copy"><span class="option-label">${escapeHTML(opt)}</span><span class="option-feedback">${escapeHTML(optionFeedback(q,oi))}</span></span></label>`;
+  }).join('');
+  const result = s.checked ? (s.correct ? `<span class="feedback good">✓ Correct. ${q.multi?'You selected the complete accepted set.':'Your answer matches the answer key.'}</span>` : `<span class="feedback bad">✕ Not fully correct. Accepted answer${q.multi?'s':''}: ${escapeHTML(correctAnswerText(q))}</span>`) : `<span class="feedback neutral">${s.seen.size ? 'Review the option feedback. Check your answer when ready.' : 'Choose an option to see feedback.'}</span>`;
+  return `<article class="question-card" id="card-${q.id}"><div class="q-top"><span class="q-num">Question ${qi+1}</span><span class="type-badge">${typeLabel}</span></div><p class="question-text">${escapeHTML(q[0])}</p><div class="options">${opts}</div><div class="q-footer"><div class="feedback-wrap">${result}</div><button class="btn btn-primary check-btn" data-qid="${q.id}" ${s.checked?'disabled':''}>${s.checked?'Answer checked':'Check answer'}</button></div>${s.checked?`<div class="hint">Answer key: ${escapeHTML(correctAnswerText(q))}</div>`:''}</article>`;
+}
+function escapeHTML(str) { return String(str).replace(/[&<>"']/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+function bindQuestionEvents() {
+  document.querySelectorAll('.question-card').forEach(card=>{
+    const qid = card.id.slice(5);
+    const q = findQuestion(qid);
+    const s = state[qid];
+    card.querySelectorAll('input').forEach(input=>input.addEventListener('change',()=>{
+      if(s.checked) return;
+      const oi = Number(input.value);
+      if(q.multi) {
+        s.selected = input.checked ? [...new Set([...s.selected,oi])] : s.selected.filter(x=>x!==oi);
+      } else {
+        s.selected = [oi];
+      }
+      s.seen.add(oi);
+      // Render the current card to show instant feedback without changing the week.
+      const old = card;
+      old.outerHTML = renderQuestion(q,q.questionIndex,s);
+      const replacement = document.getElementById(`card-${qid}`);
+      bindSingleCard(replacement,q,s);
+    }));
+    card.querySelector('.check-btn')?.addEventListener('click',()=>checkQuestion(qid));
+  });
+}
+function bindSingleCard(card,q,s) {
+  card.querySelectorAll('input').forEach(input=>input.addEventListener('change',()=>{
+    if(s.checked)return;
+    const oi=Number(input.value);
+    if(q.multi) s.selected=input.checked?[...new Set([...s.selected,oi])]:s.selected.filter(x=>x!==oi);
+    else s.selected=[oi];
+    s.seen.add(oi);
+    const id=q.id;
+    card.outerHTML=renderQuestion(q,q.questionIndex,s);
+    bindSingleCard(document.getElementById(`card-${id}`),q,s);
+  }));
+  card.querySelector('.check-btn')?.addEventListener('click',()=>checkQuestion(q.id));
+}
+function findQuestion(id) { const [wi,qi]=id.split('-').map(Number); return weeks[wi].questions[qi]; }
+function checkQuestion(id) {
+  const q=findQuestion(id), s=state[id];
+  if(!s.selected.length){alert('Please select an answer first.');return;}
+  s.checked=true;
+  s.correct=s.selected.length===q[2].length && q[2].every(x=>s.selected.includes(x));
+  // Once checked, reveal option-by-option correctness for every option.
+  s.seen=new Set(q[1].map((_,i)=>i));
+  render();
+}
+function updateScore() {
+  const all=Object.values(state), attempted=all.filter(s=>s.checked).length, correct=all.filter(s=>s.checked&&s.correct).length;
+  $('scoreText').textContent=`${correct} / ${attempted}`;
+  $('attemptText').textContent=`${attempted} / 120`;
+  $('progressFill').style.width=`${attempted/120*100}%`;
+}
+$('viewFilter').addEventListener('change',render);
+$('prevBtn').addEventListener('click',()=>{if(currentWeek>0){currentWeek--;render();window.scrollTo({top:0,behavior:'smooth'});}});
+$('nextBtn').addEventListener('click',()=>{if(currentWeek<weeks.length-1){currentWeek++;render();window.scrollTo({top:0,behavior:'smooth'});}});
+$('resetBtn').addEventListener('click',()=>{if(confirm('Reset all answers and score?')){weeks.forEach((w,wi)=>w.questions.forEach((q,qi)=>state[`${wi}-${qi}`]={selected:[],checked:false,correct:false,seen:new Set()}));currentWeek=0;render();}});
+render();
+</script>
+</body>
+</html>
